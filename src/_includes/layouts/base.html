@@ -3,9 +3,18 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{ title }}</title>
+		<meta name="description" content="{{ description or 'Ferron Dev Blog — portfolio and blog' }}" />
+		<title>{{ title }}{% if title %} — {% endif %}Ferron Dev</title>
+		<link rel="stylesheet" href="/css/global.css" />
 	</head>
 	<body>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/">Blog</a>
+		</nav>
 		{% block content %}{% endblock %}
+		<footer>
+			<p>&copy; {{ 2026 }} Ferron Dev</p>
+		</footer>
 	</body>
 </html>

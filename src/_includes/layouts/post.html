@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<article>
+	<header>
+		<time datetime="{{ date | isoDate }}">{{ date | postDate }}</time>
+		<h1>{{ title }}</h1>
+		{% if description %}
+		<p>{{ description }}</p>
+		{% endif %}
+	</header>
+	{{ content | safe }}
+</article>
+{% endblock %}
