@@ -11,3 +11,9 @@ intro:
   imageAlt: 'Buttered toasted white bread'
 ---
 This is pretty _rad_, right? test
+
+## Blog
+
+{% for post in collections.post | reverse %}
+- [{{ post.data.title }}]({{ post.url }}) — {{ post.date | date('MMMM d, yyyy') }}
+{% endfor %}

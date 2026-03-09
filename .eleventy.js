@@ -1,4 +1,17 @@
 module.exports = config => {
+  // Date filter for templates
+  config.addFilter("date", (dateObj, format) => {
+    const d = new Date(dateObj);
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    if (format === "yyyy-MM-dd") {
+      return d.toISOString().split("T")[0];
+    }
+    if (format === "MMMM d, yyyy") {
+      return `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+    }
+    return d.toLocaleDateString();
+  });
+
   // Add watch targets for live reloading
   config.addWatchTarget("./src/");
   config.addWatchTarget("./_includes/");

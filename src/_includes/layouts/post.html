@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<article>
+	<header>
+		<time datetime="{{ date | date('yyyy-MM-dd') }}">{{ date | date('MMMM d, yyyy') }}</time>
+		<h1>{{ title }}</h1>
+		{% if description %}
+		<p>{{ description }}</p>
+		{% endif %}
+	</header>
+	{{ content | safe }}
+</article>
+{% endblock %}
