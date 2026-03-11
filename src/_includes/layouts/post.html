@@ -2,7 +2,7 @@
 {% block content %}
 <article>
 	<header>
-		<time datetime="{{ date | date('yyyy-MM-dd') }}">{{ date | date('MMMM d, yyyy') }}</time>
+		<time datetime="{{ date | isoDate }}">{{ date | postDate }}</time>
 		<h1>{{ title }}</h1>
 		{% if description %}
 		<p>{{ description }}</p>
